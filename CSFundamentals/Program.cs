@@ -13,9 +13,9 @@ namespace CSFundamentals
 // bool leapYear = IsLeapYear(0);
 // Console.WriteLine(leapYear);
 // Console.ReadLine();
-            DateTime d = new DateTime(2018, 1, 18);
-            bool todayBeforeD = IsBefore(d);
-            Console.WriteLine(todayBeforeD);
+//            DateTime d = new DateTime(2018, 1, 18);
+//           bool todayBeforeD = IsBefore(d);
+            Console.WriteLine(DayInYear());
             Console.ReadLine();
         }
 
@@ -52,5 +52,19 @@ namespace CSFundamentals
             return false;
         }
 
+        public static bool IsAfter(DateTime d)
+        {
+            int dateDiff = DateTime.Compare(DateTime.Today, d);
+            if (dateDiff < 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static int DayInYear()
+        {
+            return DateTime.Now.DayOfYear;
+        }
     }
 }
