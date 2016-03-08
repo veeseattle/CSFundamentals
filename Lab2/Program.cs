@@ -10,7 +10,7 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            int[] myInts = { 1, 1, 2, 2 };
+            int[] myInts = { 1, 1, 2, 2, 2, 3 };
             smoosh(myInts);
             Console.WriteLine(string.Join(",", myInts));
             Console.ReadLine();
@@ -18,31 +18,25 @@ namespace Lab2
 
         public static void smoosh(int[] ints)
         {
-            int tempVar = ints[0];
-            int slowPointer = ints[0];
+            int slowPointer = 0;
             int pointer = 0;
         
-            //count the number of dupes 
             for (int i = 0; i < ints.Length; i++)
             {
                 pointer = ints[i];
-                if (pointer == slowPointer)
+                if (pointer == ints[slowPointer])
                 {
                     //slowPointer doesn't move
                 }
                 else
                 {
-                    for (int j = 0; j < i; j++)
-                    {
-                        ints[j] = slowPointer;
-                        slowPointer = pointer;
-                        tempVar = j;
-                    }
+                    slowPointer = slowPointer + 1;
+                    ints[slowPointer] = pointer;
                 }
             }
 
             //add -1 to the end
-            for (int j = tempVar+1; j < ints.Length; j++) 
+            for (int j = slowPointer+1; j < ints.Length; j++) 
             {
                 ints[j] = -1;
             }
