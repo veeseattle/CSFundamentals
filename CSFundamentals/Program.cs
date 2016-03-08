@@ -13,8 +13,8 @@ namespace CSFundamentals
 // bool leapYear = IsLeapYear(0);
 // Console.WriteLine(leapYear);
 // Console.ReadLine();
-//            DateTime d = new DateTime(2018, 1, 18);
-//           bool todayBeforeD = IsBefore(d);
+// DateTime d = new DateTime(2018, 1, 18);
+// bool todayBeforeD = IsBefore(d);
             Console.WriteLine(DayInYear());
             Console.ReadLine();
         }
