@@ -29,8 +29,8 @@ namespace Lab2
             fourthNode.data = 1;
             fourthNode.next = null;
 
-            //LLNode newHead = squish(head);
-            LLNode newHead = twin(head);
+            LLNode newHead = squish(head);
+            //LLNode newHead = twin(head);
             Console.WriteLine(newHead.data);
             while (newHead.next != null)
             {
@@ -71,9 +71,7 @@ namespace Lab2
         {
             LLNode fastPointer = new LLNode();
             LLNode slowPointer = new LLNode();
-            LLNode tempVar = new LLNode();
-            tempVar = head;
-            slowPointer = tempVar;
+            slowPointer = head;
             fastPointer = head;
 
             while (fastPointer.next != null)
@@ -90,7 +88,7 @@ namespace Lab2
                 }
             }
             fastPointer.next = null;
-            return tempVar;
+            return head;
         }
 
         public static LLNode twin(LLNode head)
