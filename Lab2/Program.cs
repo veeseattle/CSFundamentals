@@ -29,9 +29,14 @@ namespace Lab2
             fourthNode.data = 1;
             fourthNode.next = null;
 
-            LLNode newHead = squish(head);
+            //LLNode newHead = squish(head);
+            LLNode newHead = twin(head);
             Console.WriteLine(newHead.data);
-            newHead = newHead.next;
+            while (newHead.next != null)
+            {
+                newHead = newHead.next;
+                Console.WriteLine(newHead.data);
+            }
             Console.ReadLine();
 
         }
@@ -88,5 +93,19 @@ namespace Lab2
             return tempVar;
         }
 
+        public static LLNode twin(LLNode head)
+        {
+            LLNode pointer = head;
+
+            while (pointer != null)
+            { 
+                LLNode newNode = new LLNode();
+                newNode.data = pointer.data;
+                newNode.next = pointer.next;
+                pointer.next = newNode;
+                pointer = newNode.next;
+            }
+            return head;
+        }
     }
 }
