@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    class LLNode
+    public class LLNode
     {
-        int data;
-        LLNode next;
+        public int data;
+        public LLNode next;
     }
 }
