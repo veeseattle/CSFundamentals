@@ -16,19 +16,11 @@ namespace Lab2
             //Console.ReadLine();
 
             //test data
-            LLNode head = new LLNode();
-            LLNode secondNode = new LLNode();
-            LLNode thirdNode = new LLNode();
-            LLNode fourthNode = new LLNode();
-            head.data = 3;
-            head.next = secondNode;
-            secondNode.data = 3;
-            secondNode.next = thirdNode;
-            thirdNode.data = 2;
-            thirdNode.next = fourthNode;
-            fourthNode.data = 1;
-            fourthNode.next = null;
-
+            LLNode fourthNode = new LLNode(1, null);
+            LLNode thirdNode = new LLNode(2, fourthNode);
+            LLNode secondNode = new LLNode(3, thirdNode);
+            LLNode head = new LLNode(3, secondNode);
+            
             LLNode newHead = squish(head);
             //LLNode newHead = twin(head);
             Console.WriteLine(newHead.data);
@@ -69,10 +61,8 @@ namespace Lab2
 
         public static LLNode squish(LLNode head)
         {
-            LLNode fastPointer = new LLNode();
-            LLNode slowPointer = new LLNode();
-            slowPointer = head;
-            fastPointer = head;
+            LLNode fastPointer = head;
+            LLNode slowPointer = head;
 
             while (fastPointer.next != null)
             {
@@ -97,9 +87,7 @@ namespace Lab2
 
             while (pointer != null)
             { 
-                LLNode newNode = new LLNode();
-                newNode.data = pointer.data;
-                newNode.next = pointer.next;
+                LLNode newNode = new LLNode(pointer.data, pointer.next);
                 pointer.next = newNode;
                 pointer = newNode.next;
             }

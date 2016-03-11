@@ -10,5 +10,11 @@ namespace Lab2
     {
         public int data;
         public LLNode next;
+
+        public LLNode(int newData, LLNode nextNode)
+        {
+            data = newData;
+            next = nextNode;
+    }
     }
 }
